@@ -91,4 +91,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.cache_store = :dalli_store, nil,
+    { :namespace => nothssolidus, :expires_in => 3.day, :compress => true }
 end
