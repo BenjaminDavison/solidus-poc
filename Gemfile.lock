@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/brettallred/solidus_searchkick.git
+  revision: 07871ecede2e3e9086fae6fdbfb92a6903cf88c6
+  branch: bug_fix/deep_symbolize_keys
+  specs:
+    solidus_searchkick (0.4.0)
+      searchkick (>= 1.2)
+      solidus (~> 2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -102,8 +111,18 @@ GEM
       devise (>= 2.1.0)
     discard (1.0.0)
       activerecord (>= 4.2, < 6)
+    elasticsearch (6.1.0)
+      elasticsearch-api (= 6.1.0)
+      elasticsearch-transport (= 6.1.0)
+    elasticsearch-api (6.1.0)
+      multi_json
+    elasticsearch-transport (6.1.0)
+      faraday
+      multi_json
     erubi (1.7.1)
     execjs (2.7.0)
+    faraday (0.15.2)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
@@ -115,6 +134,7 @@ GEM
       execjs (~> 2.0)
       sprockets (>= 2.0.0)
       tilt (>= 1.2)
+    hashie (3.5.7)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -162,6 +182,7 @@ GEM
       i18n (>= 0.6.4, < 1.1)
     msgpack (1.2.4)
     multi_json (1.13.1)
+    multipart-post (2.0.0)
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
@@ -232,6 +253,10 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    searchkick (3.1.0)
+      activemodel (>= 4.2)
+      elasticsearch (>= 5)
+      hashie
     selenium-webdriver (3.14.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
@@ -358,9 +383,11 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 5.2.0)
   sass-rails (~> 5.0)
+  searchkick
   selenium-webdriver
   solidus
   solidus_auth_devise
+  solidus_searchkick!
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
